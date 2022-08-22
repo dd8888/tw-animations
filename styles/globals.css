@@ -1,11 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-shadow-transition {
+    transition: text-shadow 0.25s ease-in-out;
+  }
+  .text-shadow-transition:hover {
+    text-shadow: -1px -1px 0px #ff6138, 2px 2px 0px #ff6138, 4px 4px 0px #ff6138;
+  }
+  .text-long-shadow-transition {
+    transition: text-shadow 0.25s ease-in-out;
+  }
+  .text-long-shadow-transition:hover {
+    text-shadow: 0px 0px 0 #ff6138, 1px 1px 0 #ff6138, 2px 2px 0 #ff6138,
+      3px 3px 0 #ff6138, 4px 4px 0 #ff6138, 5px 5px 0 #ff6138, 6px 6px 0 #ff6138,
+      7px 7px 0 #ff6138, 8px 8px 0 #ff6138, 9px 9px 0 #ff6138,
+      10px 10px 0 #ff6138, 11px 11px 0 #ff6138, 12px 12px 0 #ff6138;
+  }
+  .text-highlight-transition {
+    transition: 0.5s ease-in-out;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 50%,
+      #ff6138 50%
+    );
+    background-size: 200%;
+  }
+  .text-highlight-transition:hover {
+    background-position: -100% 0;
+  }
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald-Regular.ttf");
+  font-weight: normal;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Oswald";
 }
-
+h1 {
+  text-transform: uppercase;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -23,4 +63,15 @@ a {
     color: white;
     background: black;
   }
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: black;
+}
+
+::selection {
+  color: white;
+  background: black;
 }
